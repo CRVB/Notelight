@@ -7,7 +7,7 @@ struct YazbozNoteApp: App {
     @StateObject private var appState = AppState()
 
     var body: some Scene {
-        WindowGroup("Yazboz Not", id: "main-window") {
+        WindowGroup("NoteLight", id: "main-window") {
             ContentView()
                 .environmentObject(appState)
                 .onAppear {
@@ -18,10 +18,11 @@ struct YazbozNoteApp: App {
         .defaultSize(width: 900, height: 620)
         .commands {
             CommandMenu("Hızlı İşlemler") {
-                Button("Hızlı Paneli Aç/Kapat") {
+                // Global hotkey Carbon tarafında tek kombinasyonla kayıtlı:
+                // Command + ç
+                Button("Hızlı Paneli Aç/Kapat (Cmd+ç)") {
                     NotificationCenter.default.post(name: .toggleQuickCapturePanel, object: nil)
                 }
-                .keyboardShortcut("k", modifiers: [.command, .shift])
             }
         }
     }
@@ -34,6 +35,9 @@ private struct MainWindowBinder: NSViewRepresentable {
         let view = NSView(frame: .zero)
         DispatchQueue.main.async {
             if let window = view.window {
+                // SwiftUI WindowGroup tarafından üretilen NSWindow referansını
+                // AppDelegate'e geçiriyoruz. Böylece status bar menüsünden
+                // "Ana Pencereyi Aç" her zaman doğru pencereyi hedefliyor.
                 appDelegate.registerMainWindow(window)
             }
         }

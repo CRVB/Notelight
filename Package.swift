@@ -2,20 +2,27 @@
 import PackageDescription
 
 let package = Package(
-    name: "YazbozNote",
+    name: "NoteLight",
     defaultLocalization: "en",
     platforms: [
         .macOS(.v14)
     ],
     products: [
         .executable(
-            name: "YazbozNoteApp",
+            name: "NoteLight",
             targets: ["YazbozNoteApp"]
         )
     ],
     targets: [
         .executableTarget(
-            name: "YazbozNoteApp"
+            name: "YazbozNoteApp",
+            resources: [
+                .copy("Resources")
+            ]
+        ),
+        .testTarget(
+            name: "YazbozNoteAppTests",
+            dependencies: ["YazbozNoteApp"]
         )
     ]
 )

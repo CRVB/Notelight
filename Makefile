@@ -1,4 +1,4 @@
-APP_NAME=YazbozNoteApp
+APP_NAME=NoteLight
 
 .PHONY: build run clean
 

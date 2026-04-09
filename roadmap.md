@@ -5,7 +5,7 @@ Bu dosya, uygulamanin bugunku durumunu ve hedeflenen gelisim planini asama asama
 ## 0) Mevcut Durum (Bugun)
 
 - Platform: macOS SwiftUI + AppKit
-- Global kisayol: `Cmd+Shift+K`
+- Global kisayol: `Cmd+ç`
 - Spotlight benzeri hizli not paneli: var
 - Status bar ikonu ve menu: var
 - Temel not listesi ve detay gorunumu: var
@@ -30,10 +30,12 @@ Hedef: Notlari salt metinden cikarip zengin icerikli hale getirmek.
 
 - Renkli etiketler (tag sistemi)
 - Zaman damgasi / guncellenme tarihi
+- Otomatik tarih/saat etiketi (not basina veya sonuna)
 - Kisi referanslari
 - E-posta baglantilari
 - Onizlemeli web linkleri
 - Medya ogeleri (resim, ses, dosya ekleri)
+- Ses kaydi ve hizli ekleme
 - Arama ve filtreleme (etiket, tarih, icerik)
 
 ## 3) Gelismis Uretkenlik Modulleri
@@ -52,6 +54,9 @@ Hedef: Hizli paneli gunluk kullanim icin daha guclu ve ogrenmesi kolay hale geti
 - Komut paleti yaklasimi
 - Basit metin komutlari (or: `todo:`, `etiket:`, `ara:`)
 - Hedefe yonelik hizli eylemler (ac, olustur, bagla)
+- Tarayici linkini otomatik yakalama (-link iyilestirme)
+- Tek tik ekran goruntusu (thumbnail + orijinal dosya linki)
+- AI prompt calistirma (arkada isleme, sonuclari notta gostirme)
 - Son eylemler ve oneriler
 - Daha iyi odak/klavye navigasyonu
 
